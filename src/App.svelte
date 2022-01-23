@@ -13,6 +13,11 @@
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	h1 {
