@@ -1,9 +1,10 @@
 <script>
-	
+	import SudokuTable from "./Components/SudokuTable.svelte";
 </script>
 
 <main>
 	<h1>Svelte Sudoku</h1>
+	<SudokuTable />
 </main>
 
 <style>
