@@ -4,8 +4,8 @@
 </script>
 
 <div class="sudokuSubTable">
-   {#each subTable as val}
-      <SudokuCell {val} />
+   {#each subTable as cell}
+      <SudokuCell {cell} />
    {/each}
 </div>
 
