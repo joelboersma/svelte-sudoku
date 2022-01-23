@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 
 const generateTable = () => {
-
+   
    let table = [];
 
    for (let i = 0; i < 9; i++) {
@@ -10,6 +10,8 @@ const generateTable = () => {
          const isStatic = Math.round(Math.random()) == 0;
          subTable.push({
             static: isStatic,
+            subTable: i,
+            pos: j,
             value: isStatic ? Math.round(Math.random() * 8 + 1) : undefined
          });
       }
