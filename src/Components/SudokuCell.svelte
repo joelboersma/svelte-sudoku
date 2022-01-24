@@ -9,14 +9,15 @@
    }
 
    const setValue = () => {
-      GamestateStore.update((gamestate) => {
-         
-         let newGamestate = gamestate;
-         newGamestate.table[cell.subTable][cell.pos].value = 'h';
+      if (!cell.static) {
+         GamestateStore.update((gamestate) => {
+            let newGamestate = gamestate;
+            newGamestate.table[cell.subTable][cell.pos].value = 'h';
 
-         // logTableVals(newGamestate.table);
-         return newGamestate;
-      });
+            // logTableVals(newGamestate.table);
+            return newGamestate;
+         });
+      }
    }
 </script>
 
