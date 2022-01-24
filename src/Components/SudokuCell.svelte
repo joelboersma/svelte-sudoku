@@ -1,10 +1,26 @@
 <script>
+   import { GamestateStore } from "../gamestate";
+
    export let cell;
 
-   // console.log(cell)
+   const logTableVals = (table) => {
+      const valTable = table.map((subTable => subTable.map(curCell => curCell.value)));
+      console.table(valTable);
+   }
+
+   const setValue = () => {
+      GamestateStore.update((gamestate) => {
+         
+         let newGamestate = gamestate;
+         newGamestate.table[cell.subTable][cell.pos].value = 'h';
+
+         // logTableVals(newGamestate.table);
+         return newGamestate;
+      });
+   }
 </script>
 
-<div class="sudokuCell">
+<div class="sudokuCell" on:click={setValue}>
    {#if cell.static}
       <div class="valueWrapper static">
          {cell.value}
