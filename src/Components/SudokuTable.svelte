@@ -6,7 +6,7 @@
 </script>
 
 <div id="SudokuTable">
-   {#each $GamestateStore.table as subTable}
+   {#each $GamestateStore.table as subTable (subTable[0].subTable)}
       <SudokuSubTable {subTable} />
    {/each}
 </div>
